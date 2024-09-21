@@ -39,7 +39,6 @@ public class Main {
                 case "4":
                     System.out.println("Até a próxima.");
                     return;
-            
                 default:
                     System.out.println("Opção inválida.");
                     break;     
@@ -47,6 +46,7 @@ public class Main {
             }
         }
     
+
 
     private static void mostrarmenu() {
         System.out.print("""
@@ -62,6 +62,7 @@ public class Main {
                 """);
     }
 
+    //FUNÇÕES PARA TODO PROCESSO DE CADASTRO, PUXA MÉTODOS DAS CLASSES PESSOA E RESIDÊNCIA
     private static void cadastrarPessoa(ArrayList<Pessoa> pessoas, Scanner scanner, Pessoa pessoa1, String menuOpcao){
         pessoa1.Cadastro();
         System.out.println("\nUsuário cadastrado com sucesso.");
@@ -71,7 +72,7 @@ public class Main {
     private static void cadastrarResidencia(ArrayList<Residencia> residencias, Scanner scanner, Pessoa pessoa1){
         for (int i = 1; i <= 4; i++) {
             if (i == 4) {
-                System.out.println("Última unidade que poderá ser cadastrada.");
+                System.out.println("Última unidade que poderá ser cadastrada. São permitidos os cadastros de 4 residências");
             }
 
             Residencia residencia = new Residencia();
@@ -100,8 +101,6 @@ public class Main {
             System.out.println("\n" + residencia);
         }
         alugarResidencia(residencias, scanner);
-        
-        
     }
 
     private static void alugarResidencia(ArrayList<Residencia> residencias, Scanner scanner){
@@ -110,17 +109,16 @@ public class Main {
 
         try {
             int indice = Integer.parseInt(escolha) - 1; 
-        if (indice >= 0 && indice < residencias.size()) {
-            Residencia residenciaEscolhida = residencias.get(indice);
-            System.out.println("Você escolheu alugar a residência: " + residenciaEscolhida);
-            System.out.println("Parabéns pela escolha, você já alugou.");
-        } else {
-            System.out.println("Opção inválida. Por favor, digite um número entre 1 e " + residencias.size());
-        }
+            if (indice >= 0 && indice < residencias.size()) {
+                Residencia residenciaEscolhida = residencias.get(indice);
+                System.out.println("Você escolheu alugar a residência: " + residenciaEscolhida);
+                System.out.println("Parabéns pela escolha, você já alugou.");
+            } else {
+                System.out.println("Opção inválida. Por favor, digite um número entre 1 e " + residencias.size());
+            }
         } catch (NumberFormatException e) {
             System.out.println("Opção inválida");
         }
-
     }
 }
 

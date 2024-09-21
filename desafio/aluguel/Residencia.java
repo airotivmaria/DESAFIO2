@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Residencia extends Usuario {
 
+    //MÉTODO DE CADASTRO DE RESIDÊNCIA QUE É CHAMADO LÁ NA MAIN
     public void cadastroResidencia() {
         Scanner scanner = new Scanner(System.in);
         do {

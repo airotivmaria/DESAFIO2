@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Pessoa extends Usuario {
 
+    //MÉTODO DE CADASTRO DA PESSOA QUE É CHAMADO LÁ NA MAIN
     public void Cadastro() {
         Scanner scanner = new Scanner(System.in);
         do {
@@ -26,10 +27,6 @@ public class Pessoa extends Usuario {
             System.out.print("Salário mensal: ");
             setSalarioMensal(scanner.nextDouble());
         } while (getSalarioMensal() <= 0);
-    }
-
-    public void alugar() {
-
     }
 
 }
